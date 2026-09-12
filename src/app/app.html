@@ -1,5 +1,5 @@
 <div class="orb one"></div><div class="orb two"></div><div class="orb three"></div>
-<app-navbar (customize)="toggleCustomizer()"></app-navbar>
+<app-navbar (customize)="toggleCustomizer()" (themeToggle)="toggleMode()"></app-navbar>
 <aside class="customizer glass" [class.open]="customizerOpen()" aria-label="تخصيص المظهر">
   <div class="customizer-head"><div><strong>تخصيص الواجهة</strong><small>غيّر شكل المكتبة كما تحب</small></div><button class="close" (click)="toggleCustomizer()">×</button></div>
   <div class="mode-row"><span>الوضع</span><div class="mode-buttons"><button [class.active]="mode()==='light'" (click)="setMode('light')">☀️ نهاري</button><button [class.active]="mode()==='dark'" (click)="setMode('dark')">🌙 ليلي</button></div></div>
