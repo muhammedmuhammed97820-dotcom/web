@@ -10,5 +10,6 @@ export class App implements OnInit {
   ngOnInit(){const m=(localStorage.getItem('library-mode') as 'light'|'dark')||'light';const p=localStorage.getItem('library-palette')||'rose';this.setMode(m);this.setPalette(p)}
   setMode(m:'light'|'dark'){this.mode.set(m);document.documentElement.dataset['mode']=m;localStorage.setItem('library-mode',m)}
   setPalette(p:string){this.palette.set(p);document.documentElement.dataset['palette']=p;localStorage.setItem('library-palette',p)}
+  toggleMode(){this.setMode(this.mode()==='dark'?'light':'dark')}
   toggleCustomizer(){this.customizerOpen.update(v=>!v)}
 }
