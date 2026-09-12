@@ -41,8 +41,9 @@ export class ThemeService {
 
   private apply(): void {
     const root = this.document.documentElement;
-    root.dataset.mode = this.mode();
-    root.dataset.palette = this.palette();
+    root.dataset['mode'] = this.mode();
+    root.dataset['palette'] = this.palette();
+    root.style.colorScheme = this.mode();
   }
 
   private persist(): void {
